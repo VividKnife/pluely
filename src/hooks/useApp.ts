@@ -16,7 +16,9 @@ export const useApp = () => {
     const initializeShortcuts = async () => {
       try {
         const config = getShortcutsConfig();
+        console.log("Initializing shortcuts with config:", config);
         await invoke("update_shortcuts", { config });
+        console.log("Shortcuts initialized successfully");
       } catch (error) {
         console.error("Failed to initialize shortcuts:", error);
       }
